@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\AuthController as AuthAuthController;
+use App\Http\Controllers\Student\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//New Routes
+Route::get('student/login', [AuthController::class, 'index'])->name('student.login');
+
+Route::get('login', [AuthAuthController::class, 'index'])->name('login');
+
